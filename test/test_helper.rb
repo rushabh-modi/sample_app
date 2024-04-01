@@ -6,6 +6,8 @@ Minitest::Reporters.use!
 
 module ActiveSupport
   class TestCase
+    include ApplicationHelper
+
     # Run tests in parallel with specified workers
     parallelize(workers: :number_of_processors)
 
