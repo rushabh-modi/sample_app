@@ -1,11 +1,11 @@
 require "test_helper"
 
-class UsersLoginTest < ActionDispatch::IntegrationTest
+class UsersLogin < ActionDispatch::IntegrationTest
   def setup
     @user = users(:rushabh)
   end
 
-  class InvalidPasswordTest < UsersLoginTest
+  class InvalidPasswordTest < UsersLogin
     test "login path" do
       get login_path
       assert_template "sessions/new"
@@ -21,7 +21,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     end
   end
 
-  class ValidLogin < UsersLoginTest
+  class ValidLogin < UsersLogin
     def setup
       super
       post login_path, params: { session: { email: @user.email, password: "password" } }
@@ -70,7 +70,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     end
   end
 
-  class RememberingTest < UsersLoginTest
+  class RememberingTest < UsersLogin
     test "login with remembering" do
       log_in_as(@user, remember_me: "1")
       assert_not cookies[:remember_token].blank?
