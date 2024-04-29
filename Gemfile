@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.3.0"
+ruby "3.3.1"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
@@ -55,6 +55,8 @@ gem "will_paginate", "~> 3.1", ">= 3.1.6"
 gem "bootstrap-will_paginate"
 
 gem "active_storage_validations"
+
+gem 'letter_opener'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
